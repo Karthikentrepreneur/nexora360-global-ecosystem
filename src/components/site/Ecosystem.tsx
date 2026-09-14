@@ -5,7 +5,7 @@ import { useReveal } from "@/hooks/use-reveal";
 
 export function Ecosystem() {
   const [active, setActive] = useState(0);
-  const current = capabilities[active];
+  const current = capabilities[active] ?? capabilities[0]!;
   const { ref, visible } = useReveal<HTMLDivElement>();
   const R = 178;
 

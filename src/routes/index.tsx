@@ -1,24 +1,62 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Nav } from "@/components/site/Nav";
+import { Hero } from "@/components/site/Hero";
+import { Ecosystem } from "@/components/site/Ecosystem";
+import {
+  About,
+  Advantage,
+  ClosingCta,
+  Commitments,
+  Directory,
+  Engagement,
+  Industries,
+  OperatingModel,
+  Problem,
+  Values,
+  VisionMission,
+} from "@/components/site/Sections";
+import { Contact, Footer } from "@/components/site/Contact";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+const title = "Nexora360 Global Solutions — One Partner. Every Business Need.";
+const description =
+  "Nexora360 is a global 360° business capability partner integrating GCC, BPO, KPO, digital, customer experience, HR, finance, data and AI & automation under one operating model.";
+
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title },
+      { name: "description", content: description },
+      { property: "og:title", content: title },
+      { property: "og:description", content: description },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+    links: [{ rel: "canonical", href: "https://www.nexora360global.com/" }],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <>
+      <Nav />
+      <main>
+        <Hero />
+        <Problem />
+        <About />
+        <Ecosystem />
+        <Directory />
+        <Advantage />
+        <Industries />
+        <Values />
+        <Commitments />
+        <OperatingModel />
+        <Engagement />
+        <VisionMission />
+        <ClosingCta />
+        <Contact />
+      </main>
+      <Footer />
+    </>
   );
 }

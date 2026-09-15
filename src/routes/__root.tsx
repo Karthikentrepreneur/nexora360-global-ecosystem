@@ -77,21 +77,50 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Nexora360 Global Solutions — One Partner. Every Business Need." },
+      {
+        name: "description",
+        content:
+          "A global 360° business capability partner integrating GCC, BPO, KPO, digital, customer experience, HR, finance, data and AI & automation.",
+      },
+      { name: "author", content: "Nexora360 Global Solutions Private Limited" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
+      { name: "theme-color", content: "#0b0d12" },
     ],
     links: [
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap",
+      },
       {
         rel: "stylesheet",
         href: appCss,
       },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "Nexora360 Global Solutions Private Limited",
+          url: "https://www.nexora360global.com/",
+          slogan: "One partner. Every business need.",
+          email: "info@nexora360global.com",
+          telephone: "+91 96556 80234",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "ED-305, Bollineni Hillside Phase 2, Perumbakkam",
+            addressLocality: "Chennai",
+            postalCode: "600126",
+            addressCountry: "IN",
+          },
+        }),
+      },
     ],
   }),
   shellComponent: RootShell,

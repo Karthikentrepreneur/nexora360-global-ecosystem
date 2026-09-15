@@ -79,8 +79,11 @@ function Orbit() {
           return (
             <div
               key={n}
-              className="absolute left-1/2 top-1/2 size-0"
-              style={{ transform: `rotate(${a}deg) translateY(-40%) rotate(-${a}deg)` }}
+              className="absolute size-0"
+              style={{
+                left: `${50 + Math.cos((a - 90) * (Math.PI / 180)) * 40}%`,
+                top: `${50 + Math.sin((a - 90) * (Math.PI / 180)) * 40}%`,
+              }}
             >
               <div className="orbit-spin-reverse">
                 <span className="flex -translate-x-1/2 -translate-y-1/2 items-center gap-2 whitespace-nowrap border border-line bg-surface/70 px-2.5 py-1.5 font-mono text-[9px] uppercase tracking-[0.14em] text-muted-foreground backdrop-blur-sm sm:text-[10px]">

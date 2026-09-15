@@ -81,8 +81,8 @@ function Orbit() {
               key={n}
               className="absolute size-0"
               style={{
-                left: `${50 + Math.cos((a - 90) * (Math.PI / 180)) * 40}%`,
-                top: `${50 + Math.sin((a - 90) * (Math.PI / 180)) * 40}%`,
+                left: `${50 + Math.cos((a - 90) * (Math.PI / 180)) * 34}%`,
+                top: `${50 + Math.sin((a - 90) * (Math.PI / 180)) * 34}%`,
               }}
             >
               <div className="orbit-spin-reverse">
